@@ -10,7 +10,7 @@ All code changes should be made through pull requests.
 Follow the coding style guide and ensure code quality with appropriate comments and documentation.
 Review and discuss major changes or new features with the team before implementation.
 Team Members:
-Team Leader (You): @SameedIrfan7
+Team Leader : @SameedIrfan7
 Teammate 1: @RahulR1240
 Teammate 2: @AshaPuttabuddi
 Teammate 3: @pramodg535
