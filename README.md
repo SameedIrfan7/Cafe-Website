@@ -8,7 +8,7 @@ main: Our main branch. It contains the stable version of the project that's read
 Contribution Guidelines:
 All code changes should be made through pull requests.
 Follow the coding style guide and ensure code quality with appropriate comments and documentation.
-Review and discuss major changes or new features with the team before implementation.
+Review and discuss major changes or new features with the team before implementation.<br>
 Team Members:<br>
 Team Leader : @SameedIrfan7<br>
 Teammate 1: @RahulR1240<br>
