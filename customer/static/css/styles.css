@@ -1,0 +1,37 @@
+/* Default light theme styles */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mode-container {
+    display: flex;
+    gap: 10px;
+}
+
+.gg-sun,
+.gg-moon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .gg-sun {
+    transform: translateY(-100%);
+}
+
+.dark-mode .gg-moon {
+    transform: translateY(0);
+}

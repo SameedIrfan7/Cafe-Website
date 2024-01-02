@@ -1,3 +1,4 @@
+{% load static %}
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -27,11 +28,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--// Meta tag Keywords -->
 
 	<!-- Custom-Files -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 	<!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 	<!-- Style-CSS -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //Custom-Files -->
 
@@ -120,7 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- logo -->
 				<h1>
 					<a id="logo" class="logo" href="index.html">
-						<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 					</a>
 				</h1>
 				<!-- //logo -->
@@ -130,8 +131,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<label for="drop" class="toggle">Menu</label>
 						<input type="checkbox" id="drop" />
 						<ul class="menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'about' %}">About Us</a></li>
 							<li>
 								<!-- First Tier Drop Down -->
 								<label for="drop-3" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
@@ -203,7 +204,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						mi, vulputate ac metus at, semper varius orci..</p>
 				</div>
 				<div class="col-lg-6 text-center mt-lg-0 mt-4">
-					<img src="images/ab.jpg" alt="about" class="img-fluid" />
+					<img src="{% static 'images/ab.jpg' %}" alt="about" class="img-fluid" />
 				</div>
 			</div>
 		</div>
@@ -225,7 +226,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center">
-							<img src="images/s1.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s1.png' %}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -235,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-lg-5 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
 					<div class="row">
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center">
-							<img src="images/s2.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s2.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-8 wthree_banner_bottom_grid_right">
 							<h4 class="mb-3"><a href="login.html">Free & Easy Returns</a></h4>
@@ -252,7 +253,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center pr-lg-0">
-							<img src="images/s3.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s3.png' %}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -262,7 +263,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
 					<div class="row">
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center pl-lg-0">
-							<img src="images/s4.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s4.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-8 wthree_banner_bottom_grid_right pr-lg-0">
 							<h4 class="mb-3"><a href="login.html">24/7 Support</a></h4>
@@ -273,7 +274,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 		<div class="img-blog-2">
-			<img src="images/img.png" alt="" class="img-fluid">
+			<img src="{% static 'images/img.png' %}" alt="" class="img-fluid">
 		</div>
 	</section>
 	<!-- //services -->
@@ -289,7 +290,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="row team-bottom pt-4">
 				<div class="col-lg-3 col-6 team-grid">
-					<a href="#team"><img src="images/t1.png" class="img-fluid" alt=""></a>
+					<a href="#team"><img src="{% static 'images/t1.png' %}" class="img-fluid" alt=""></a>
 					<div class="caption">
 						<div class="team-text">
 							<h4><a href="#team">Mack Joe</a></h4>
@@ -314,7 +315,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col-lg-3 col-6 team-grid">
-					<a href="#team"><img src="images/t2.png" class="img-fluid" alt=""></a>
+					<a href="#team"><img src="{% static 'images/t2.png' %}" class="img-fluid" alt=""></a>
 					<div class="caption">
 						<div class="team-text">
 							<h4><a href="#team">Cruz Deo</a></h4>
@@ -339,7 +340,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col-lg-3 col-6 team-grid mt-lg-0 mt-4">
-					<a href="#team"><img src="images/t3.png" class="img-fluid" alt=""></a>
+					<a href="#team"><img src="{% static 'images/t3.png' %}" class="img-fluid" alt=""></a>
 					<div class="caption">
 						<div class="team-text">
 							<h4><a href="#team">Rochy Jae</a></h4>
@@ -364,7 +365,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col-lg-3 col-6 team-grid  mt-lg-0 mt-4">
-					<a href="#team"><img src="images/t4.png" class="img-fluid" alt=""></a>
+					<a href="#team"><img src="{% static 'images/t4.png' %}" class="img-fluid" alt=""></a>
 					<div class="caption">
 						<div class="team-text">
 							<h4><a href="#team">Rojo Poy</a></h4>
@@ -401,7 +402,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- logo -->
 					<h2>
 						<a class="logo text-wh" href="index.html">
-							<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+							<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 						</a>
 					</h2>
 					<!-- //logo -->
@@ -452,16 +453,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<ul class="list-unstyled payment-links mt-4">
 						<li>
-							<a href="login.html"><img src="images/pay2.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay2.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay5.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay5.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay1.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay1.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay4.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay4.png' %}" alt=""></a>
 						</li>
 					</ul>
 				</div>
