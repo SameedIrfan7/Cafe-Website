@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -31,7 +32,10 @@
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //Custom-Files -->
 
+	<!-- for dark and light theme link -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<!-- Web-Fonts -->
+
 	<link
 		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
 		rel="stylesheet">
@@ -52,12 +56,12 @@
 						<div class="row">
 							<div class="col-xl-3 col-6 header-top_w3layouts">
 								<p class="text-da">
-									<span class="fa fa-map-marker mr-2"></span>Parma Via, Italy
+									<span class="fa fa-map-marker mr-2"></span>Bording Circle, Mysore
 								</p>
 							</div>
 							<div class="col-xl-3 col-6 header-top_w3layouts">
 								<p class="text-da">
-									<span class="fa fa-phone mr-2"></span>+1 000263676
+									<span class="fa fa-phone mr-2"></span>9110443938
 								</p>
 							</div>
 							<div class="col-xl-6"></div>
@@ -115,8 +119,8 @@
 			<div class="nav-content">
 				<!-- logo -->
 				<h1>
-					<a id="logo" class="logo" href="{% url 'home' %}">
-						<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+					<a id="logo" class="logo" href="index.html">
+						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 					</a>
 				</h1>
 				<!-- //logo -->
@@ -127,7 +131,7 @@
 						<input type="checkbox" id="drop" />
 						<ul class="menu">
 							<li><a href="{% url 'home' %}">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="{% url 'about' %}">About Us</a></li>
 							<li>
 								<!-- First Tier Drop Down -->
 								<label for="drop-3" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
@@ -137,22 +141,31 @@
 								<input type="checkbox" id="drop-3" />
 								<ul>
 									<li><a class="drop-text" href="#services">Services</a></li>
-									<li><a class="drop-text" href="about.html">Our Chefs</a></li>
+									<li><a class="drop-text" href="{% url 'about' %}">Our Chefs</a></li>
 									<li><a class="drop-text" href="#blog">Blog</a></li>
-									<li><a class="drop-text" href="single.html">Single Page</a></li>
-									<li><a class="drop-text" href="login.html">Login</a></li>
-									<li><a class="drop-text" href="register.html">Register</a></li>
+									<li><a class="drop-text" href="{% url 'single' %}">Single Page</a></li>
+									<li><a class="drop-text" href="{% url 'login' %}">Login</a></li>
+									<li><a class="drop-text" href="{% url 'register' %}">Register</a></li>
 								</ul>
 							</li>
-							<li><a href="menu.html">Menu</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li>
-								<!-- login -->
-								<a href="https://w3layouts.com/" target="_blank" class="dwn-button ml-lg-5">
-									<span class="fa fa-cloud-download mt-lg-0 mt-4" aria-hidden="true"></span>
-								</a>
-								<!-- //login -->
-							</li>
+							<li><a href="{% url 'menu' %}">Menu</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+
+							<div class="mobile-position">
+								<nav class="navigation">
+									<div class="theme-switch-wrapper">
+										<label class="theme-switch" for="checkbox">
+											<input type="checkbox" id="checkbox">
+											<div class="mode-container">
+												<i class="gg-sun"></i>
+												<i class="gg-moon"></i>
+											</div>
+										</label>
+									</div>
+								</nav>
+							</div>
+							<script src="{% static 'js/script.js' %}"></script>
 						</ul>
 					</nav>
 				</div>
@@ -174,10 +187,10 @@
 							<h3 class="text-da mb-4">Flame <span>Grilled Burger</span> </h3>
 							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 								laudantium</p>
-							<a href="about.html" class="button-w3ls active mt-5">Read More
+							<a href="{% url 'about' %}" class="button-w3ls active mt-5">Read More
 								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 							</a>
-							<a href="menu.html" class="button-w3ls mt-5 ml-2">Order Now
+							<a href="{% url 'menu' %}" class="button-w3ls mt-5 ml-2">Order Now
 								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 							</a>
 						</div>
@@ -239,7 +252,7 @@
 						architecto
 						beatae vitae dicta
 						sunt explicabo.Nemo enim ipsam voluptatem quia voluptas sit.</p>
-					<a href="about.html" class="button-w3ls mt-5">Read More
+					<a href="{% url 'about' %}" class="button-w3ls mt-5">Read More
 						<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 					</a>
 				</div>
@@ -260,14 +273,14 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="card border-0 med-blog">
 						<div class="card-header p-0">
-							<a href="menu.html">
-								<img class="card-img-bottom" src="images/blog1.jpg" alt="Card image cap">
+							<a href="{% url 'menu' %}">
+								<img class="card-img-bottom" src="{% static 'images/blog1.jpg' %}" alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body border border-top-0">
-							<h5 class="blog-title card-title m-0"><a href="menu.html">French Burger</a></h5>
+							<h5 class="blog-title card-title m-0"><a href="{% url 'menu' %}">French Burger</a></h5>
 							<p class="mt-3">Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-							<a href="menu.html" class="btn button-w3ls mt-4 mb-3">View More
+							<a href="{% url 'menu' %}" class="btn button-w3ls mt-4 mb-3">View More
 								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 							</a>
 						</div>
@@ -278,14 +291,14 @@
 				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
 					<div class="card border-0 med-blog">
 						<div class="card-header p-0">
-							<a href="menu.html">
-								<img class="card-img-bottom" src="images/blog2.jpg" alt="Card image cap">
+							<a href="{% url 'menu' %}>
+								<img class="card-img-bottom" src="{% static 'images/blog2.jpg' %}" alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body border border-top-0">
-							<h5 class="blog-title card-title m-0"><a href="menu.html">Veg Muffin</a></h5>
+							<h5 class="blog-title card-title m-0"><a href="{% url 'menu' %}">Veg Muffin</a></h5>
 							<p class="mt-3">Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-							<a href="menu.html" class="button-w3ls active mt-4 mb-3">View More
+							<a href="{% url 'menu' %}" class="button-w3ls active mt-4 mb-3">View More
 								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 							</a>
 						</div>
@@ -296,14 +309,14 @@
 				<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
 					<div class="card border-0 med-blog">
 						<div class="card-header p-0">
-							<a href="menu.html">
-								<img class="card-img-bottom" src="images/blog3.jpg" alt="Card image cap">
+							<a href="{% url 'menu' %}">
+								<img class="card-img-bottom" src="{% static 'images/blog3.jpg' %}" alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body border border-top-0">
-							<h5 class="blog-title card-title m-0"><a href="menu.html">Hashbrown Brioche</a></h5>
+							<h5 class="blog-title card-title m-0"><a href="{% url 'menu' %}">Hashbrown Brioche</a></h5>
 							<p class="mt-3">Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-							<a href="menu.html" class="button-w3ls mt-4 mb-3">View More
+							<a href="{% url 'menu' %}" class="button-w3ls mt-4 mb-3">View More
 								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 							</a>
 						</div>
@@ -321,11 +334,11 @@
 			<div class="col-md-6 p-0">
 				<div class="blog-sec-w3">
 					<div class="text-blog-w3 text-center p-2">
-						<h4 class="text-wh mb-3"><a href="menu.html">Best Fast Food Collection</a></h4>
+						<h4 class="text-wh mb-3"><a href="{% url 'menu' %}">Best Fast Food Collection</a></h4>
 						<p class="text-li">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris Sed
 							ut perspiciatis
 							unde omnis iste natus error.</p>
-						<a href="menu.html" class="button-w3ls active mt-5">Order Now
+						<a href="{% url 'menu' %}"class="button-w3ls active mt-5">Order Now
 							<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 						</a>
 					</div>
@@ -334,11 +347,11 @@
 			<div class="col-md-6 p-0">
 				<div class="blog-sec-w3 blog-sec-w3-2">
 					<div class="text-blog-w3 text-center p-2">
-						<h4 class="text-wh mb-3"><a href="menu.html">Organic Best & Fresh Food</a></h4>
+						<h4 class="text-wh mb-3"><a href="{% url 'menu' %}">Organic Best & Fresh Food</a></h4>
 						<p class="text-li">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris Sed
 							ut perspiciatis
 							unde omnis iste natus error.</p>
-						<a href="menu.html" class="button-w3ls active mt-5">Order Now
+						<a href="{% url 'menu' %}" class="button-w3ls active mt-5">Order Now
 							<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 						</a>
 					</div>
@@ -359,11 +372,11 @@
 				<div class="col-lg-5 w3pvt-lauits_banner_bottom_left">
 					<div class="row">
 						<div class="col-8 wthree_banner_bottom_grid_right text-right">
-							<h4 class="mb-3"><a href="login.html">Free Shipping</a></h4>
+							<h4 class="mb-3"><a href="{% url 'login' %}">Free Shipping</a></h4>
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center">
-							<img src="images/s1.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s1.png' %}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -373,10 +386,10 @@
 				<div class="col-lg-5 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
 					<div class="row">
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center">
-							<img src="images/s2.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s2.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-8 wthree_banner_bottom_grid_right">
-							<h4 class="mb-3"><a href="login.html">Free & Easy Returns</a></h4>
+							<h4 class="mb-3"><a href="{% url 'login' %}">Free & Easy Returns</a></h4>
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 					</div>
@@ -386,11 +399,11 @@
 				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left">
 					<div class="row">
 						<div class="col-8 wthree_banner_bottom_grid_right text-right pl-lg-0">
-							<h4 class="mb-3"><a href="login.html">Online Order</a></h4>
+							<h4 class="mb-3"><a href="{% url 'login' %}">Online Order</a></h4>
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center pr-lg-0">
-							<img src="images/s3.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s3.png' %}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -400,10 +413,10 @@
 				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
 					<div class="row">
 						<div class="col-4 wthree_banner_bottom_grid_left text-lg-right text-center pl-lg-0">
-							<img src="images/s4.png" alt="" class="img-fluid">
+							<img src="{% static 'images/s4.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-8 wthree_banner_bottom_grid_right pr-lg-0">
-							<h4 class="mb-3"><a href="login.html">24/7 Support</a></h4>
+							<h4 class="mb-3"><a href="{% url 'login' %}">24/7 Support</a></h4>
 							<p>Morbi viverra lacus commodo felis semper lectus feugiat.</p>
 						</div>
 					</div>
@@ -411,7 +424,7 @@
 			</div>
 		</div>
 		<div class="img-blog-2">
-			<img src="images/img.png" alt="" class="img-fluid">
+			<img src="{% static 'images/img.png' %}" alt="" class="img-fluid">
 		</div>
 	</section>
 	<!-- //services -->
@@ -432,9 +445,9 @@
 					<div class="card border-0">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img src="images/blog1.png" class="card-img-bottom img-fluid" alt="image">
+								<img src="{% static 'images/blog1.png' %}" class="card-img-bottom img-fluid" alt="image">
 							</a>
-							<img src="images/te1.jpg" alt="" class="img-blog rounded-circle img-fluid">
+							<img src="{% static 'images/te1.jpg' %}" alt="" class="img-blog rounded-circle img-fluid">
 						</div>
 						<div class="card-body text-center pt-5 mt-2">
 							<h5 class="blog-title card-title mb-2"><a href="single.html">Sed ut Riciatis</a></h5>
@@ -455,9 +468,9 @@
 					<div class="card border-0">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img src="images/blog2.png" class="card-img-bottom img-fluid" alt="image">
+								<img src="{% static 'images/blog2.png' %}" class="card-img-bottom img-fluid" alt="image">
 							</a>
-							<img src="images/te2.jpg" alt="" class="img-blog rounded-circle img-fluid">
+							<img src="{% static 'images/te2.jpg' %}" alt="" class="img-blog rounded-circle img-fluid">
 						</div>
 						<div class="card-body text-center pt-5 mt-2">
 							<h5 class="blog-title card-title mb-2"><a href="single.html">Unde omnis iste</a></h5>
@@ -478,9 +491,9 @@
 					<div class="card border-0">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img src="images/blog3.png" class="card-img-bottom img-fluid" alt="image">
+								<img src="{% static 'images/blog3.png' %}" class="card-img-bottom img-fluid" alt="image">
 							</a>
-							<img src="images/te3.jpg" alt="" class="img-blog rounded-circle img-fluid">
+							<img src="{% static 'images/te3.jpg' %}" alt="" class="img-blog rounded-circle img-fluid">
 						</div>
 						<div class="card-body text-center pt-5 mt-2">
 							<h5 class="blog-title card-title mb-2"><a href="single.html">Natus error sit</a></h5>
@@ -523,7 +536,7 @@
 
 				</div>
 			</div>
-			<img src="images/sub.png" alt="" class="img-fluid sub-img">
+			<img src="{% static 'images/sub.png' %}" alt="" class="img-fluid sub-img">
 		</div>
 	</section>
 	<!-- //newsletter -->
@@ -535,8 +548,8 @@
 				<div class="col-lg-4 footer-grid_section_1its footer-text">
 					<!-- logo -->
 					<h2>
-						<a class="logo text-wh" href="{% url 'home' %}">
-							<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+						<a class="logo text-wh" href="index.html">
+							<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 						</a>
 					</h2>
 					<!-- //logo -->
@@ -587,16 +600,16 @@
 					</div>
 					<ul class="list-unstyled payment-links mt-4">
 						<li>
-							<a href="login.html"><img src="images/pay2.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay2.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay5.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay5.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay1.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay1.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay4.png" alt=""></a>
+							<a href="login.html"><img src="{% static 'images/pay4.png' %}" alt=""></a>
 						</li>
 					</ul>
 				</div>
