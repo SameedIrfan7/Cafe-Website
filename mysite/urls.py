@@ -21,11 +21,11 @@ from customer.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home,name="home"),
-    path('', about_view,name="about"),
-    path('', contact_view,name="contact"),
-    path('', login_view,name="login"),
-    path('', register_view,name="register"),
-    path('', menu_view,name="menu"),
-    path('', single_view,name="signle")
+    path('about/', about_view,name="about"),
+    path('contact/', contact_view,name="contact"),
+    path('login/', login_view,name="login"),
+    path('register/', register_view,name="register"),
+    path('menu/', menu_view,name="menu"),
+    path('single/', single_view,name="single")
     
 ]

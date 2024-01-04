@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from customer.models import Customer
 
 # Create your views here.
 def home(request):
