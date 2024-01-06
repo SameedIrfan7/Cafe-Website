@@ -1,3 +1,4 @@
+{% load static %}
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -27,11 +28,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--// Meta tag Keywords -->
 
 	<!-- Custom-Files -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 	<!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 	<!-- Style-CSS -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //Custom-Files -->
 
@@ -71,7 +72,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="row middle-flex">
 							<div class="col-lg-5 col-4 top-w3layouts p-md-0 text-right">
 								<!-- login -->
-								<a href="login.html" class="btn login-button-2 text-uppercase text-wh">
+								<a href="{% url 'login' %}" class="btn login-button-2 text-uppercase text-wh">
 									<span class="fa fa-sign-in mr-2"></span>Login</a>
 								<!-- //login -->
 							</div>
@@ -119,8 +120,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="nav-content">
 				<!-- logo -->
 				<h1>
-					<a id="logo" class="logo" href="index.html">
-						<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+					<a id="logo" class="logo" href="{% url 'home' %}">
+						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 					</a>
 				</h1>
 				<!-- //logo -->
@@ -130,8 +131,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<label for="drop" class="toggle">Menu</label>
 						<input type="checkbox" id="drop" />
 						<ul class="menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'about' %}">About Us</a></li>
 							<li>
 								<!-- First Tier Drop Down -->
 								<label for="drop-3" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
@@ -140,16 +141,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<a href="#pages">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
 								<input type="checkbox" id="drop-3" />
 								<ul>
-									<li><a class="drop-text" href="index.html">Services</a></li>
-									<li><a class="drop-text" href="about.html">Our Chefs</a></li>
-									<li><a class="drop-text" href="index.html">Blog</a></li>
-									<li><a class="drop-text" href="single.html">Single Page</a></li>
-									<li><a class="drop-text" href="login.html">Login</a></li>
-									<li><a class="drop-text" href="register.html">Register</a></li>
+									<li><a class="drop-text" href="{% url 'home' %}">Services</a></li>
+									<li><a class="drop-text" href="{% url 'about' %}">Our Chefs</a></li>
+									<li><a class="drop-text" href="{% url 'home' %}">Blog</a></li>
+									<li><a class="drop-text" href="{% url 'single' %}">Single Page</a></li>
+									<li><a class="drop-text" href="{% url 'login' %}">Login</a></li>
+									<li><a class="drop-text" href="{% url 'register' %}">Register</a></li>
 								</ul>
 							</li>
-							<li><a href="menu.html">Menu</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="{% url 'menu' %}">Menu</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
 							<li>
 								<!-- login -->
 								<a href="https://w3layouts.com/" target="_blank" class="dwn-button ml-lg-5">
@@ -176,7 +177,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="breadcrumb-agile bg-light py-2">
 		<ol class="breadcrumb bg-light m-0">
 			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
+				<a href="{% url 'home' %}">Home</a>
 			</li>
 			<li class="breadcrumb-item active" aria-current="page">Contact Us</li>
 		</ol>
@@ -198,7 +199,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3 class="footer-title mb-4 pb-lg-2">Our Address</h3>
 					<div class="row address-info-w3ls">
 						<div class="col-3 address-left">
-							<img src="images/c1.png" alt="" class="img-fluid">
+							<img src="{% static 'images/c1.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-9 address-right mt-2">
 							<h5 class="address mb-2">Address</h5>
@@ -207,7 +208,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="row address-info-w3ls my-2">
 						<div class="col-3 address-left">
-							<img src="images/c2.png" alt="" class="img-fluid">
+							<img src="{% static 'images/c2.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-9 address-right mt-2">
 							<h5 class="address mb-2">Email</h5>
@@ -218,7 +219,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="row address-info-w3ls">
 						<div class="col-3 address-left">
-							<img src="images/c3.png" alt="" class="img-fluid">
+							<img src="{% static 'images/c3.png' %}" alt="" class="img-fluid">
 						</div>
 						<div class="col-9 address-right mt-2">
 							<h5 class="address mb-2">Phone</h5>
@@ -267,8 +268,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-lg-4 footer-grid_section_1its footer-text">
 					<!-- logo -->
 					<h2>
-						<a class="logo text-wh" href="index.html">
-							<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+						<a class="logo text-wh" href="{% url 'home' %}">
+							<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 						</a>
 					</h2>
 					<!-- //logo -->
@@ -319,16 +320,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<ul class="list-unstyled payment-links mt-4">
 						<li>
-							<a href="login.html"><img src="images/pay2.png" alt=""></a>
+							<a href="{% url 'login' %}"><img src="{% static 'images/pay2.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay5.png" alt=""></a>
+							<a href="{% url 'login' %}"><img src="{% static 'images/pay5.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay1.png" alt=""></a>
+							<a href="{% url 'login' %}"><img src="{% static 'images/pay1.png' %}" alt=""></a>
 						</li>
 						<li>
-							<a href="login.html"><img src="images/pay4.png" alt=""></a>
+							<a href="{% url 'login' %}"><img src="{% static 'images/pay4.png' %}" alt=""></a>
 						</li>
 					</ul>
 				</div>
