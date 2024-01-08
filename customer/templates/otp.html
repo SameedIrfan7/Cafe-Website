@@ -48,8 +48,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	<!-- header -->
-	<header id="home">
-		<!-- top-bar -->
+	 <header id="home">
+		 <!-- top-bar -->
 		<div class="top-bar py-2 border-bottom">
 			<div class="container">
 				<div class="row middle-flex">
@@ -110,7 +110,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 		</div>
-	</header>
+	</header> -->
 	<!-- //top-bar -->
 
 	<!-- header 2 -->
@@ -121,7 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- logo -->
 				<h1>
 					<a id="logo" class="logo" href="index.html">
-						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burgers
+						<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"><span>Tasty</span> Burger
 					</a>
 				</h1>
 				<!-- //logo -->
@@ -151,6 +151,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</li>
 							<li><a href="{% url 'menu' %}">Menu</a></li>
 							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							<li>
+								<!-- login -->
+								<a href="https://w3layouts.com/" target="_blank" class="dwn-button ml-lg-5">
+									<span class="fa fa-cloud-download mt-lg-0 mt-4" aria-hidden="true"></span>
+								</a>
+								<!-- //login -->
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -182,33 +189,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container py-xl-5 py-3">
 			<div class="login-body">
 				<div class="login p-4 mx-auto">
-					<h5 class="text-center mb-4">Register Now</h5>
-					<form action="{% url 'register' %}" method="post">
+					<h5 class="text-center mb-4">Verification</h5>
+					<form action="{% url 'otp' %}" method="post">
 						{% csrf_token %}
 							{{msg}}
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Enter your name" required="">
+							<label>OTP </label>
+							<input type="text" class="form-control" name="u_otp" placeholder="Enter your OTP" required="">
 						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" name="email" placeholder="Enter your mail" required="">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" name="mobile" placeholder="Enter your number" required="">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" name="address" placeholder="Your place" required="">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" name="password" id="password" placeholder="Enter your password"
-								required="">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password"
-								required="">
-						</div>
-						<button type="submit" class="btn submit mb-4">Register</button>
+						<button type="submit" class="btn submit mb-4">Submit</button>
 						<p class="text-center">
-							<a href="#" class="text-da">By clicking Register, I agree to your terms</a>
+							<a href="#" class="text-da">By clicking, I agree to your terms</a>
 						</p>
 					</form>
 				</div>

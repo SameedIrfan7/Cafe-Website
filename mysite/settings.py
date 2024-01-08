@@ -128,9 +128,9 @@ MEDIA_URL = '/customer_profile/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'photos')
 
 
-EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'sameedirfan7@gmail.com'
-EMAIL_HOST_PASSWORD = 'gjeqtlfmsenlbxpb'
+EMAIL_PORT = 465  # Port for SSL
+EMAIL_USE_SSL = True  # Use SSL encryption
+EMAIL_HOST_USER = 'sameedirfan7@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'leoeckyzsjvjebbf'  # Your Gmail password or app-specific password

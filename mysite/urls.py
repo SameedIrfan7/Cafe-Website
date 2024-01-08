@@ -28,4 +28,5 @@ urlpatterns = [
     path('login/', login , name="login"),
     path('register/', register , name="register"),
     path('header/', header , name="header"),
+    path('verification/',otp,name='otp')
 ]

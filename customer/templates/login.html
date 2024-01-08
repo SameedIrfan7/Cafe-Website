@@ -72,8 +72,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="row middle-flex">
 							<div class="col-lg-5 col-4 top-w3layouts p-md-0 text-right">
 								<!-- login -->
-								<a href="{% url 'login' %}" class="btn login-button-2 text-uppercase text-wh">
-									<span class="fa fa-sign-in mr-2"></span>Login PAGE</a>
+								<a href="{% url 'register' %}" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-in mr-2"></span>Register</a>
 								<!-- //login -->
 							</div>
 							<div class="col-lg-7 col-8 social-grid-w3">
@@ -169,10 +169,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //header 2 -->
 
 	<!-- banner -->
-	<div class="main-banner-2">
+	<!-- <div class="main-banner-2">
 
-	</div>
+	</div> -->
 	<!-- //banner -->
+
 	<!-- page details -->
 	<div class="breadcrumb-agile bg-light py-2">
 		<ol class="breadcrumb bg-light m-0">
@@ -190,10 +191,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="login-body">
 				<div class="login p-4 mx-auto">
 					<h5 class="text-center mb-4">Login Now</h5>
-					<form action="#" method="post">
+					<form action="{% url 'login' %}" method="post">
+						{% csrf_token %}
 						<div class="form-group">
-							<label>Your Name</label>
-							<input type="text" class="form-control" name="name" placeholder="" required="">
+							<label>Your Email</label>
+							<input type="text" class="form-control" name="email" placeholder="" required="">
 						</div>
 						<div class="form-group">
 							<label class="mb-2">Password</label>
