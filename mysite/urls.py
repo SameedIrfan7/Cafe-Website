@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
 from customer.views import *
 
 urlpatterns = [
@@ -29,4 +30,9 @@ urlpatterns = [
     path('register/', register , name="register"),
     path('header/', header , name="header"),
     path('verification/',otp,name='otp')
+=======
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+>>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
 ]

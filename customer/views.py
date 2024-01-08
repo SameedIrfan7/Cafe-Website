@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from customer.models import Customer
 from random import randint
@@ -106,3 +107,8 @@ def login(request):
             # if entered email is not registered
             return render(request, 'login.html', {"msg":'This email is not registered'})
         
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
