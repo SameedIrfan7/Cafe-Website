@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from customer.models import Customer
 from random import randint
@@ -9,13 +8,32 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
+    # if 'email' in request.session:
+    #     user_obj=Customer.objects.get(email=request.session['email'])
+    #     return render(request, 'index.html')
+    # else:
+    #     return render(request, 'index.html')
     return render(request, 'index.html')
 
+
+
 def about(request):
+    # if 'email' in request.session:
+    #     user_obj=Customer.objects.get(email=request.session['email'])
+    #     return render(request, 'about.html')
+    # else:
+    #     return render(request, 'about.html')
     return render(request, 'about.html')
 
+
 def menu(request):
+    # if 'email' in request.session:
+    #     user_obj=Customer.objects.get(email=request.session['email'])
+    #     return render(request, 'menu.html')
+    # else:
+    #     return render(request, 'menu.html')
     return render(request, 'menu.html')
+        
         
 def single(request):
     return render(request, 'single.html')
@@ -23,8 +41,12 @@ def single(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def header(request):
     return render(request, "header.html")
+
+
+
 
 def register(request):
     if request.method == 'GET':
@@ -66,6 +88,9 @@ def register(request):
             else:
                 return render(request, 'register.html', {'msg': 'BOTH passwords do not matchh!!!'})
  
+ 
+ 
+ 
 def otp(request):
     pass
     # compare otp entered by user and generated otp
@@ -87,6 +112,10 @@ def otp(request):
     else:
         return render(request, 'otp.html', {'msg': "entered OTP is INVALID"})
     
+    
+    
+    
+    
 def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
@@ -106,9 +135,10 @@ def login(request):
         except:
             # if entered email is not registered
             return render(request, 'login.html', {"msg":'This email is not registered'})
-        
-=======
-from django.shortcuts import render
-
-# Create your views here.
->>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
+    
+    
+    
+    
+def logout(request):
+    del request.session['email']
+    return redirect('index') # name= argument in urls.py
