@@ -8,12 +8,11 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
-    # if 'email' in request.session:
-    #     user_obj=Customer.objects.get(email=request.session['email'])
-    #     return render(request, 'index.html')
-    # else:
-    #     return render(request, 'index.html')
-    return render(request, 'index.html')
+    if 'email' in request.session:
+        user_obj=Customer.objects.get(email=request.session['email'])
+        return render(request, 'index.html',{'user_data':user_obj})
+    else:
+        return render(request, 'index.html')
 
 
 
@@ -122,23 +121,23 @@ def login(request):
     else:
         #check the email & password
         # start the session
-        try:
+        # try:
             session_user = Customer.objects.get(email = request.POST['email'])
             # validating password
             if request.POST['password'] == session_user.password:
                 #starting the session
                 request.session['email'] = session_user.email
-                return redirect('index')
+                return redirect('home')
 
             else:
                 return render(request, 'login.html', {'msg': "Invalid Password!!"})
-        except:
-            # if entered email is not registered
-            return render(request, 'login.html', {"msg":'This email is not registered'})
+        # except:
+        #     # if entered email is not registered
+    return render(request, 'login.html', {"msg":'This email is not registered'})
     
     
     
     
 def logout(request):
     del request.session['email']
-    return redirect('index') # name= argument in urls.py
+    return redirect('home') # name= argument in urls.py

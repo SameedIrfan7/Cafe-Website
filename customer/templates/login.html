@@ -74,6 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h5 class="text-center mb-4">Login Now</h5>
 					<form action="{% url 'login' %}" method="post">
 						{% csrf_token %}
+						{{msg}}
 						<div class="form-group">
 							<label>Your Email</label>
 							<input type="text" class="form-control" name="email" placeholder="" required="">
