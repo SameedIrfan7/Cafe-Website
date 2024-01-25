@@ -63,8 +63,8 @@
 				<h4>Your shopping cart contains:
 					<span>{{p_count}} Products</span>
 				</h4>
-				<div class="table-responsive">
-					<table class="timetable_sub">
+				<div class="title-section text-center mb-md-5 mb-4">
+					<table class="title-section text-center mb-md-5 mb-4">
 						<thead>
 							<tr>
 								
@@ -73,15 +73,16 @@
 								<th>Product Name</th>
 
 								<th>Price</th>
+
 								<th>Remove</th>
 							</tr>
 						</thead>
 						<tbody>
 							{% for i in my_cart %}
 							
-							<tr class="rem1">
+							<tr class="col-md-4">
 								
-								<td class="invert-image">
+								<td class="gallery-demo">
 									<a href="{% url 'menu' %}">
 										<img src="{{i.product.image.url}}" alt=" " style="max-width:100px; max-height:100px;" class="img-responsive">
 									</a>
@@ -91,7 +92,7 @@
 								<td class="invert">${{i.product.price}}</td>
 								<td class="invert">
 									<button>
-										<a href='{% url "del_cart" i.id %}' >delete </a>
+										<a href='{% url "del_cart" i.id %}' id="" class="col-lg-4 footer-grid_section_1its"> delete </a>
 									</button>
 								</td>
 							</tr>
@@ -108,7 +109,7 @@
 					
 					{% if my_cart %}
 					<div class="checkout-right-basket">
-						<a href="{% url 'paymenthandler' %}" id="pay-btn">Make a Payment
+						<a href="{% url 'paymenthandler' %}" id="pay-btn" class="pop-up">Make a Payment
 							<span class="fa fa-hand-o-right" aria-hidden="true"></span>
 						</a>
 					</div>
