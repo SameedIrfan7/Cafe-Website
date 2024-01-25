@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from customer.models import Customer
+from customer.models import Customer, Cart, Orders
+from seller.models import Product
 from random import randint
 from django.conf import settings
 from django.core.mail import send_mail
@@ -121,19 +122,19 @@ def login(request):
     else:
         #check the email & password
         # start the session
-        # try:
+        try:
             session_user = Customer.objects.get(email = request.POST['email'])
             # validating password
             if request.POST['password'] == session_user.password:
                 #starting the session
                 request.session['email'] = session_user.email
-                return redirect('home')
+                return redirect('menu')
 
             else:
                 return render(request, 'login.html', {'msg': "Invalid Password!!"})
-        # except:
+        except:
         #     # if entered email is not registered
-    return render(request, 'login.html', {"msg":'This email is not registered'})
+              return render(request, 'login.html', {"msg":'This email is not registered'})
     
     
     
@@ -141,3 +142,23 @@ def login(request):
 def logout(request):
     del request.session['email']
     return redirect('home') # name= argument in urls.py
+
+
+
+def add_to_cart(request, pk):
+    if 'email' in request.session:
+        #add that product in db table
+        Cart.objects.create(
+            buyer = Customer.objects.get(email= request.session['email']),
+            product = Product.objects.get(id = pk)
+        )
+        return redirect('home')
+    else:
+        # no buyer has logged in
+        return redirect('login')
+    
+    
+    
+    
+def cart(request):
+    return render(request, 'cart.html')

@@ -1,0 +1,69 @@
+{% extends 'seller_header.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-3">
+  </div>
+    <div class="col-9">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Fixed Header Table</h3>
+
+          <div class="card-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-default">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0" style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Product Name</th>
+                <th>Buyer Name</th>
+                <th>Delivery Address</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for item in order_items %}
+              <tr>
+                <td>{{item.order_id}}</td>
+                <td>{{item.time}}</td>
+                <td>
+                  <select>
+                    <option value="Order Placed" >Order Placed</option>
+                    <option value="Order Shipped" >Order Shipped</option>
+                    <option value="In Transit" >In Transit</option>
+                    <option value="Delivered" >Delivered</option>
+                  </select>
+                </td>
+                <td><span class="tag tag-success">{{item.product.product_name}}</span></td>
+                <td>{{item.buyer.full_name}}</td>
+                <td>{{item.buyer.address}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+  </div>
+  <br> <br> <br>
+
+  {% endblock %}

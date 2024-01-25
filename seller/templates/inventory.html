@@ -1,0 +1,33 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    {% for pro in my_products %}
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Product</h3>
+          <a href="{% url 'edit_product' pro.id %}" >
+          <i class="fas fa-edit"></i>
+          </a>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body text-center">
+          <p>{{pro.product_name}}</p>
+
+          <image src='{{pro.image.url}}' style="max-height:200px; max-width:200px;" >
+        </div>
+        <p><b>Price: {{pro.price}}</b></p>
+        <p><b>Stock:  {{pro.stock}}</b></p>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    {% endfor %}
+   
+  </div>
+
+{% endblock %}
