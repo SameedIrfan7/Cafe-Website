@@ -104,12 +104,12 @@
 						<ul class="menu">
 							<li><a href="{% url 'home' %}">Home</a></li>
 							<li><a href="{% url 'about' %}">About Us</a></li>
-							<li>
-								<!-- First Tier Drop Down -->
+							<li><a href="{% url 'cart' %}">CART</a></li>
+							<!-- <li>
 								<label for="drop-3" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
 										aria-hidden="true"></span>
 								</label>
-								<a href="#pages">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+								<a href="{% url 'cart' %}">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
 								<input type="checkbox" id="drop-3" />
 								<ul>
 									<li><a class="drop-text" href="#services">Services</a></li>
@@ -119,7 +119,7 @@
 									<li><a class="drop-text" href="{% url 'login' %}">Login</a></li>
 									<li><a class="drop-text" href="{% url 'register' %}">Register</a></li>
 								</ul>
-							</li>
+							</li> -->
 							<li><a href="{% url 'menu' %}">Menu</a></li>
 							<li><a href="{% url 'contact' %}">Contact Us</a></li>
 						</ul>

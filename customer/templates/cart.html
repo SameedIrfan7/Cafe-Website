@@ -48,34 +48,76 @@
 <body>
     {% include 'header.html' %}
 	<!-- banner -->
+	<div>
+		<div>
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Checkout
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="checkout-right">
+				<h4>Your shopping cart contains:
+					<span>{{p_count}} Products</span>
+				</h4>
+				<div class="table-responsive">
+					<table class="timetable_sub">
+						<thead>
+							<tr>
+								
+								<th>Product</th>
+								
+								<th>Product Name</th>
 
-	<!-- about -->
-	<!-- <div class="about-bottom">
-		<div class="row no-gutters">
-			<div class="col-lg-5 col-md-6 about">
-
-			</div>
-			<div class="col-lg-7 col-md-6 about-right-w3 text-right py-md-5">
-				<div class="right-space py-xl-5 py-lg-3">
-					<div class="title-section mb-4">
-						<p class="w3ls-title-sub">About Us</p>
-						<h3 class="w3ls-title">Welcome to <span>Tasty Burger</span></h3>
-					</div>
-					<p class="about-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-						doloremque
-						laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-						architecto
-						beatae vitae dicta
-						sunt explicabo.Nemo enim ipsam voluptatem quia voluptas sit.</p>
-					<a href="{% url 'about' %}" class="button-w3ls mt-5">Read More
-						<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
-					</a>
+								<th>Price</th>
+								<th>Remove</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in my_cart %}
+							
+							<tr class="rem1">
+								
+								<td class="invert-image">
+									<a href="{% url 'menu' %}">
+										<img src="{{i.product.image.url}}" alt=" " style="max-width:100px; max-height:100px;" class="img-responsive">
+									</a>
+								</td>
+								
+								<td class="invert">{{i.product.product_name}}</td>
+								<td class="invert">${{i.product.price}}</td>
+								<td class="invert">
+									<button>
+										<a href='{% url "del_cart" i.id %}' >delete </a>
+									</button>
+								</td>
+							</tr>
+							
+							{% endfor %}
+						</tbody>
+					</table>
 				</div>
 			</div>
+			<div class="checkout-left">
+				<div class="address_form_agile">
+					<h3>{{msg}}</h3>
+					<h4>Total Amount to Pay: ${{total_cost}}</h4>
+					
+					{% if my_cart %}
+					<div class="checkout-right-basket">
+						<a href="{% url 'paymenthandler' %}" id="pay-btn">Make a Payment
+							<span class="fa fa-hand-o-right" aria-hidden="true"></span>
+						</a>
+					</div>
+					{% endif %}
+				</div>
+				<div class="clearfix"> </div>
+			</div>
 		</div>
-	</div> -->
-	<!-- //about -->
-
+	</div>
 	<!-- specials -->
 	<section class="blog_w3ls py-5">
 		<div class="container pb-xl-5 pb-lg-3">

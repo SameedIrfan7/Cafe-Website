@@ -135,3 +135,10 @@ EMAIL_PORT = 465  # Port for SSL
 EMAIL_USE_SSL = True  # Use SSL encryption
 EMAIL_HOST_USER = 'sameedirfan7@gmail.com'  # Your Gmail address
 EMAIL_HOST_PASSWORD = 'leoeckyzsjvjebbf'  # Your Gmail password or app-specific password
+
+f = open('rzp.csv')
+str1 = f.read()
+str2 = str1.split('\n')[1]
+k_and_s = str2.split(',')
+RAZOR_KEY_ID = k_and_s[0]
+RAZOR_KEY_SECRET = k_and_s[1]

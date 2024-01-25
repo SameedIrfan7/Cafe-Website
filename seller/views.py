@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from seller.models import SellerTable, CategoryTable, Product
 from customer.models import Orders
-
+from random import randint
+from django.conf import settings
+from django.core.mail import send_mail
 # Create your views here.
 
 

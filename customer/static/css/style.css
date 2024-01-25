@@ -189,7 +189,7 @@ a.login-button-2 {
 /* CSS Document */
 .toggle-2,
 .toggle,
-[id^=drop] {
+[id=drop] {
     display: none;
 }
 
@@ -509,7 +509,7 @@ button.submit {
 .banner-info_agile_w3ls {
     padding-top: 10em;
     padding-left: 5em;
-}`
+}
 
 .banner-info_agile_w3ls h5 {
     font-family: 'Lato', sans-serif;
@@ -862,7 +862,7 @@ h2 a.logo {
     padding: 9px;
     letter-spacing: 1px;
     border: none;
-    -webkit-appearance: none;
+    webkit-appearance: none;
 }
 
 .info-form-right textarea {
@@ -1085,7 +1085,7 @@ h5.address {
     padding: 1em;
     letter-spacing: 1px;
     border: solid 1px #ddd;
-    -webkit-appearance: none;
+    webkit-appearance: none;
     display: inline-block;
 }
 
@@ -1625,5 +1625,10 @@ h3.title-sub span {
         bottom: -31%;
     }
 }
-
+.timetable_sub th, .timetable_sub td {
+    width: 50px;
+}
+td.invert-image a img {
+    width: 62%;
+}  
 /* //responsive */
