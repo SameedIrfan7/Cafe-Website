@@ -17,12 +17,15 @@ Teammate 2: @AshaPuttabuddi
 Teammate 3: @pramodg535
 Teammate 4: @arunpap
 
+<<<<<<< HEAD
 Team Members:<br>
 Team Leader : @SameedIrfan7<br>
 Teammate 1: @RahulR1240<br>
 Teammate 2: @AshaPuttabuddi<br>
 Teammate 3: @pramodg535<br>
 Teammate 4: @arunpap<br>
+=======
+>>>>>>> Sameed
 
 Documentation:
 Comprehensive documentation can be found in the

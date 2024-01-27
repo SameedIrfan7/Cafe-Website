@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< HEAD
 import os
-=======
->>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,10 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'customer'
-=======
->>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
+    'customer',
+    'seller',
 ]
 
 MIDDLEWARE = [
@@ -113,11 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-<<<<<<< HEAD
 TIME_ZONE = 'Asia/Kolkata'
-=======
-TIME_ZONE = 'UTC'
->>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
 
 USE_I18N = True
 
@@ -133,7 +124,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 
 MEDIA_URL = '/customer_profile/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'photos')
@@ -145,5 +135,10 @@ EMAIL_PORT = 465  # Port for SSL
 EMAIL_USE_SSL = True  # Use SSL encryption
 EMAIL_HOST_USER = 'sameedirfan7@gmail.com'  # Your Gmail address
 EMAIL_HOST_PASSWORD = 'leoeckyzsjvjebbf'  # Your Gmail password or app-specific password
-=======
->>>>>>> 7bd1ddb8542b68a91eb1d655f7d91b32ca367ab7
+
+f = open('rzp.csv')
+str1 = f.read()
+str2 = str1.split('\n')[1]
+k_and_s = str2.split(',')
+RAZOR_KEY_ID = k_and_s[0]
+RAZOR_KEY_SECRET = k_and_s[1]

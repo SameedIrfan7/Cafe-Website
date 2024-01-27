@@ -1,1 +1,4 @@
 env
+customer/__pycache__
+seller/__pycache__
+db.sqlite3
